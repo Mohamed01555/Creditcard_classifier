@@ -61,6 +61,6 @@ def classify():
     data = request.json
     pred = test(data)
     print(type(data),pred[0])
-    return jsonify(PREDICTION = int(pred[0]))
+    return jsonify(PREDICTION = pred)
 
 app.run(debug = False)
