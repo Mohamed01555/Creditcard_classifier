@@ -13,7 +13,7 @@ from sklearn.model_selection import train_test_split
 
 df = pd.read_csv('creditcard.csv')
 
-'''
+
 X = df.drop('Class',axis=1)
 Y = df['Class']
 
@@ -24,12 +24,12 @@ x_train.shape,x_test.shape,y_train.shape,y_test.shape
 xg = XGBClassifier()
 xg.fit(x_train,y_train)
 print(xg.score(x_test,y_test))
-'''
+
 model_dir = os.path.join(os.path.dirname(os.path.abspath("__file__")),'pikle','xg.pkl')
-'''
+
 def save_model():
     joblib.dump(xg,model_dir,True)
-'''
+
 def load_model():
     return joblib.load(model_dir)
 
